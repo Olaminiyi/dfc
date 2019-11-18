@@ -1,0 +1,23 @@
+{
+  "aaData": [
+    {
+      "s/n": "1",
+      "fileName": "Jennifer",
+      "fileDate": "11-09-2012",
+      "processingStatus": "Not Processed",
+      "noOfTransaction": "35728",
+      "export": "Export CSV",
+      "view": "View Raw File"
+    },
+    {
+      "s/n": "2",
+      "fileName": "Tunde",
+      "fileDate": "9-11-2019",
+      "processingStatus": "Processed",
+      "noOfTransaction": "2376",
+      "export": "Export CSV",
+      "view": "View Raw File"
+    }
+   
+  ]
+}

@@ -1,0 +1,30 @@
+
+:host {
+  
+  
+  .pop-up {
+    z-index: 50;
+    display: inline-flex;;
+    flex-direction: unset;;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+  
+
+    background:#2980b9;
+    width:350px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    padding:3px 3px 70px 3px;
+    border: #2980b9 4px solid;
+
+
+    
+  }
+}
+
+  

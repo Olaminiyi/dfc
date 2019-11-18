@@ -1,0 +1,117 @@
+
+
+  
+
+
+
+<div>
+   <!---  <button class="btn btn-primary" type="submit" style="margin-left: 1000px; margin-top: 15px;">
+      Add Users
+    </button> -->
+  
+    <button class="btn btn-primary" [disabled]="popUpOpen" (click)="openPopUp()"  style="margin-left: 980px; margin-top: 15px;"> Add Users</button>
+<app-pop-up class="my-prompt" [isOpen]="popUpOpen">
+
+  <div class="box">
+    
+      <h1>Add User</h1>
+    
+    
+      <div class="popupinput" >
+        <input type="text" placeholder="Username...">
+        <input type="email" placeholder="Email...">
+        <input type="password" placeholder="Password...">
+      </div>
+    
+    
+      <button class="btn1" (click)="deleteOption()">Add</button>
+      <button id="btn2" (click)="cancelOption()">Cancel</button>
+    
+  </div> 
+
+
+  
+    <!--  <div class="box1">
+      <h1>Dashboard</h1>
+      
+      <input type="text" name="username" placeholder="Username..."  class="email" />
+        
+      <input type="email" name="email" placeholder="Email..."  class="email" />
+      <input type="password" name="password" placeholder="Password..."   class="email" />
+        
+      <button class="btn"  (click)="deleteOption()">Get User</button> 
+      
+      <button id="btn2"  (click)="cancelOption()">Cancel</button> 
+        
+      </div>  -->
+        
+      
+      
+
+
+</app-pop-up>
+
+
+
+
+
+    <div id="content">
+      <div class="row">
+        <sa-big-breadcrumbs [items]="['Users', 'users Tables']" icon="user"
+                            class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+    <!---    <sa-stats></sa-stats> -->
+      </div>
+    
+      <sa-widgets-grid>
+    
+    
+        <div class="row">
+          <article class="col-sm-12">
+    
+    
+            <div sa-widget [editbutton]="false" color="darken">
+              <header><span class="widget-icon"> <i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> </span>
+                <h2>
+                  Users Table
+              </h2></header>
+              <div>
+                <div class="widget-body no-padding">
+                  <sa-datatable
+                    [options]="{
+                    colReorder: true,
+                  ajax: 'assets/api/tables/datatables.standard1.json',
+                  columns: [ {data: 's/n'}, {data: 'Name'}, {data: 'Email'} ] }" 
+                    paginationLength="true" tableClass="table table-striped table-bordered table-hover"
+                    width="100%">
+                    <thead>
+                    <tr>
+                      <th data-hide="phone">S/N</th>
+                      <th data-class="expand"><i
+                        class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>
+                        Name
+                      </th>
+                      <th data-hide="phone"><i
+                          class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>
+                        Email
+                      </th>
+                     <!--- <th>Role</th>
+                      <th data-hide="phone,tablet"><i
+                        class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i>
+                        Role
+                      </th>
+                     <th data-hide="phone,tablet">City</th>
+                      <th data-hide="phone,tablet"><i
+                        class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>
+                        Date
+                      </th> -->
+                    </tr>
+                    </thead>
+                  </sa-datatable>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </sa-widgets-grid>
+  </div>
+  </div>
