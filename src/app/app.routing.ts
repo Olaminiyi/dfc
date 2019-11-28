@@ -7,25 +7,45 @@ import {Routes, RouterModule} from '@angular/router';
 import {MainLayoutComponent} from "./shared/layout/app-layouts/main-layout.component";
 import {AuthLayoutComponent} from "./shared/layout/app-layouts/auth-layout.component";
 import {ModuleWithProviders} from "@angular/core";
+import { AuthService } from './+auth/auth.service';
+import { NeedAuthGuard } from './dfc/models/login.guard';
 
 export const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
+   
     data: {pageTitle: 'Home'},
+
+
+    
     children: [
+      // {
+      //   path: '', redirectTo: 'dashboard/analytics', pathMatch: 'full'
+      // },
+
       {
-        path: '', redirectTo: 'dashboard/analytics', pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        loadChildren: 'app/+dashboard/dashboard.module#DashboardModule',
-        data: {pageTitle: 'Dashboard'}
-      },
+        path: '',
+        redirectTo: 'auth/login', pathMatch: 'full',
+        data: {pageTitle: 'DFC'}
+     },
+
+     { 
+       path: 'auth',
+       loadChildren:  'app/+auth/auth.module#AuthModule',
+       data: {pageTitle: 'Login'}
+     },
+
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: 'app/+dashboard/dashboard.module#DashboardModule',
+      //   data: {pageTitle: 'Dashboard'}
+      // },
       
       {
         path: 'dfc',
         loadChildren: 'app/dfc/dfc.modules#dfcModule',
+        canActivate: [NeedAuthGuard],
         data: {pageTitle: 'DFC'}
      },
 

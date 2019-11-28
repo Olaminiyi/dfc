@@ -4,7 +4,7 @@ body{
   margin: 0 auto 0 auto;  
   width:100%; 
   text-align:center;
-  margin: 20px 0px 20px 0px;   
+  margin: 10px 0px 20px 0px;   
 }
 
 p{
@@ -14,19 +14,20 @@ p{
 }
 
 h1{
-  font-size:2.2em;
+  font-size:2.0em;
   color:#525252;
   margin-left: 80px;
+  margin-top: 20px;
 }
 
 .box{
   background:white;
   width:300px;
-  height: 300px;
+  height: 320px;
   border-radius:6px;
-  margin-top: 30px;
+  margin-top: 10px;
   padding:0px 0px 0px 0px;
-  border: #2980b9 4px solid; 
+  
 }
 .popupinput{
   margin-left: 18px;

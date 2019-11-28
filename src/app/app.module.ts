@@ -19,6 +19,16 @@ import {SmartadminLayoutModule} from "./shared/layout/layout.module";
 
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { CustomHttpInterceptor } from './dfc/custom-http-interceptor';
+import { AuthService } from './+auth/auth.service';
+import { HttpErrorHandler } from './dfc/services/http-error-handler.service';
+import { NeedAuthGuard } from './dfc/models/login.guard';
+import { LoginComponent } from './+auth/+login/login.component';
+import { UsersService } from './dfc/services/users.service';
+import { FileService } from './dfc/services/files.service';
+import { MessageService } from './dfc/services/message.service';
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -39,15 +49,15 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
+    
 
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-
+HttpClientModule,
     ModalModule.forRoot(),
-
 
     CoreModule,
     SmartadminLayoutModule,
@@ -58,7 +68,13 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     // ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    HttpErrorHandler,
+    NeedAuthGuard,
+    UsersService,
+    FileService,
+    MessageService
+    
   ]
 })
 export class AppModule {

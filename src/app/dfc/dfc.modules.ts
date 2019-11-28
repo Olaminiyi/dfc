@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { dfcRouting } from './dfc-routing.module';
-import { dfcComponent } from './dfc.component';
+
+import { UsersService } from './services/users.service';
+import { FileService } from './services/files.service';
+import { HttpErrorHandler } from './services/http-error-handler.service';
+
 
 @NgModule({
   imports: [
     CommonModule,
-    dfcRouting
+    dfcRouting,
+
+  ],
+  providers:[
+    FileService,
+    HttpErrorHandler,
+    UsersService
   ],
   declarations: [  ]
 })

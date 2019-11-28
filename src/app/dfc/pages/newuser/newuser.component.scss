@@ -3,9 +3,10 @@
   
   
   .pop-up {
-    z-index: 50;
+    z-index: 1;
+    margin-top: 20px;
     display: inline-flex;;
-    flex-direction: unset;;
+    flex-direction: unset;
     justify-content: center;
     box-sizing: border-box;
     position: fixed;
@@ -15,12 +16,14 @@
     
   
 
-    background:#2980b9;
-    width:350px;
+    background: #3A3633;
+    width:320px;
+    height: 340px;
     border-radius:6px;
-    margin: 0 auto 0 auto;
-    padding:3px 3px 70px 3px;
-    border: #2980b9 4px solid;
+    margin-top: 50px;
+    margin-left: 500px;
+    padding:3px 3px 30px 3px;
+    
 
 
     
